@@ -1,10 +1,22 @@
-class Unit:
-    def __init__(self, name, hp, damage): # 3개의 전달값
-        self.name = name # 멤버변수 name
-        self.hp = hp # 멤버변수 hp
-        self.damage = damage # 멤버변수 damage
-        print("{0} 유닛이 생성되었습니다.".format(self.name))
-        print("체력 {0}, 공격력 {1}".format(self.hp, self.damage))
-     
-wraith1 = Unit("레이스", 80, 5)
-print("유닛 이름 : {0}, 공격력 : {1}".format(wraith1.name, wraith1.damage))
+ss = input("날짜(연/월/일) 입력 -->")
+
+ssList = ss.split('/')
+
+print("입력한 날짜의 3개월 10일 후 ==> ", end ='')
+
+y = int(ssList[0])
+m = int(ssList[1]) + 3
+d = int(ssList[2]) + 10
+
+if(m >= 12):
+    m -= 12
+    y += 1
+
+if(d >= 30):
+    d -= 30
+    m += 1
+print(str(y) + "년", end = '')    
+print(str(m) + "월", end = '')
+print(str(d) + "일", end = '')
+
+print()
